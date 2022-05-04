@@ -3,18 +3,18 @@
     "books" : [
         {
             "thumbnail" : "js",
-            "title" : 30,
-            "description" : ""
+            "title" : "꼼꼼한 재은씨 문법편",
+            "description" : "1"
         },
         {
             "thumbnail" : "js",
-            "title" : 30,
-            "description" : ""
+            "title" : "꼼꼼한 재은씨 기본편",
+            "description" : "2"
         },
         {
             "thumbnail" : "js",
-            "title" : 30,
-            "description" : "" //휴식...
+            "title" : "꼼꼼한 재은씨 실전편",
+            "description" : "3"
         }
     ]
 }

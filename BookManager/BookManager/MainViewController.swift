@@ -9,16 +9,28 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
+    private var bookInfoData: (totalCount: Int, books: [BookInfo]) = (0,[])
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        loadBookInfo()
         
+    }
+    
+    private func loadBookInfo() {
         guard
             let jsonData = BookManager.shared.load(),
-            let dictData = String(data: jsonData, encoding: .utf8)
+            let dictData = try? JSONDecoder().decode(Book.self, from: jsonData)
         else { return }
         
         print("결과 \(dictData)")
+    }
+    
+    private func updateBookInfo(_ responseData: Book) {
+        guard let data = responseData else { return }
+        bookInfoData.totalCount = data.totalCount
+        bookInfoData.books = data.books
     }
 
     

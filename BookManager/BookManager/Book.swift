@@ -8,11 +8,16 @@
 import Foundation
 
 
-struct Book {
+struct Book: Decodable {
+    let totalCount: Int?
+    let books: [BookInfo]
+    //var isBookmark: Bool?
+}
+
+struct BookInfo: Decodable {
     let thumbnail: String?
     let title: String?
     let description: String?
-    var isBookmark: Bool?
 }
 
 class BookManager {

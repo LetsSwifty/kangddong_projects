@@ -16,6 +16,8 @@
 		EF46E1412822BAD2005E8E67 /* BookMarkTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1402822BAD2005E8E67 /* BookMarkTableVC.swift */; };
 		EF46E1432822BBC4005E8E67 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1422822BBC4005E8E67 /* Book.swift */; };
 		EF46E1452822BE2E005E8E67 /* BookInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EF46E1442822BE2E005E8E67 /* BookInfo.json */; };
+		EF46E1472822CA43005E8E67 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */; };
+		EF46E1492822DC83005E8E67 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1482822DC83005E8E67 /* Storage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		EF46E1402822BAD2005E8E67 /* BookMarkTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarkTableVC.swift; sourceTree = "<group>"; };
 		EF46E1422822BBC4005E8E67 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		EF46E1442822BE2E005E8E67 /* BookInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BookInfo.json; sourceTree = "<group>"; };
+		EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		EF46E1482822DC83005E8E67 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +76,8 @@
 				EF46E1402822BAD2005E8E67 /* BookMarkTableVC.swift */,
 				EF46E1422822BBC4005E8E67 /* Book.swift */,
 				EF46E1442822BE2E005E8E67 /* BookInfo.json */,
+				EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */,
+				EF46E1482822DC83005E8E67 /* Storage.swift */,
 			);
 			path = BookManager;
 			sourceTree = "<group>";
@@ -149,9 +155,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF46E131282026A0005E8E67 /* MainViewController.swift in Sources */,
+				EF46E1492822DC83005E8E67 /* Storage.swift in Sources */,
 				EF46E12D282026A0005E8E67 /* AppDelegate.swift in Sources */,
 				EF46E12F282026A0005E8E67 /* SceneDelegate.swift in Sources */,
 				EF46E1432822BBC4005E8E67 /* Book.swift in Sources */,
+				EF46E1472822CA43005E8E67 /* BookTableViewCell.swift in Sources */,
 				EF46E1412822BAD2005E8E67 /* BookMarkTableVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
