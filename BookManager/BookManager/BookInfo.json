@@ -1,0 +1,20 @@
+{
+    "totalCount" : 3,
+    "books" : [
+        {
+            "thumbnail" : "js",
+            "title" : 30,
+            "description" : ""
+        },
+        {
+            "thumbnail" : "js",
+            "title" : 30,
+            "description" : ""
+        },
+        {
+            "thumbnail" : "js",
+            "title" : 30,
+            "description" : "" //휴식...
+        }
+    ]
+}
