@@ -12,6 +12,7 @@ class BookInfo {
     var thumbnail: String?
     var title: String?
     var description: String?
+    var isSelected: Bool?
 }
 
 //struct Book: Decodable {
@@ -33,19 +34,20 @@ class BookManager {
     private init () {}
     
     var dataset = [
-        ("grammar.jpeg", "꼼꼼한 재은씨 문법편", "꼼꼼한 재은씨가 꼼꼼하게 문법에 대해서 알려주는 책이다."),
-        ("basic.jpeg", "꼼꼼한 재은씨 기본편", "꼼꼼한 재은씨가 꼼꼼하게 iOS 개발의 기본에 대해서 알려주는 책이다."),
-        ("practice.jpeg", "꼼꼼한 재은씨 실전편", "꼼꼼한 재은씨가 꼼꼼하게 iOS 개발의 실전에 대해서 알려주는 책이다.")
+        ("grammar.jpeg", "꼼꼼한 재은씨 문법편", "꼼꼼한 재은씨가 꼼꼼하게 문법에 대해서 알려주는 책이다.", false),
+        ("basic.jpeg", "꼼꼼한 재은씨 기본편", "꼼꼼한 재은씨가 꼼꼼하게 iOS 개발의 기본에 대해서 알려주는 책이다.", false),
+        ("practice.jpeg", "꼼꼼한 재은씨 실전편", "꼼꼼한 재은씨가 꼼꼼하게 iOS 개발의 실전에 대해서 알려주는 책이다.", false)
     ]
 
     lazy var list: [BookInfo] = {
         var datalist = [BookInfo]()
         
-        for (thumbnail, title, desc) in self.dataset {
+        for (thumbnail, title, desc, isSelected) in self.dataset {
             let bookInfo = BookInfo()
             bookInfo.thumbnail = thumbnail
             bookInfo.title = title
             bookInfo.description = desc
+            bookInfo.isSelected = isSelected
             
             datalist.append(bookInfo)
         }

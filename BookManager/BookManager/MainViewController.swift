@@ -9,17 +9,18 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    let bManager = BookManager.shared
+    let model = BookManager.shared
     
-    private var bookInfoData: (totalCount: Int, books: [BookInfo]) = (0,[])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.tableView.estimatedRowHeight = 90
-        //self.tableView.rowHeight = UITableView.automaticDimension
-        //loadBookInfo()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
+        self.tableView.reloadData()
     }
     
     @IBAction func moveBookMark(_ sender: Any) {
@@ -47,20 +48,32 @@ class MainViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bManager.list.count
+        return model.list.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let row = bManager.list[indexPath.row]
+        let row = model.list[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "bookListCell") as? BookTableViewCell else { return UITableViewCell() }
+        cell.delegate = self
         
         cell.thumbnailImageView.image = UIImage(named: row.thumbnail!)
-        cell.titleLabel?.text = row.title
-        cell.descLabel?.text = row.description
+        cell.titleLabel.text = row.title
+        cell.descLabel.text = row.description
+        cell.row = indexPath.row
         
         return cell
     }
 
+}
+
+// MARK: Cell Delegate
+extension MainViewController: ToggleBookMark {
+    func toggle(row: Int?, isOn: Bool) {
+        guard let row = row else { return }
+        
+        model.list[row].isSelected = isOn     
+        
+    }
 }
 
