@@ -18,6 +18,9 @@
 		EF46E1452822BE2E005E8E67 /* BookInfo.json in Resources */ = {isa = PBXBuildFile; fileRef = EF46E1442822BE2E005E8E67 /* BookInfo.json */; };
 		EF46E1472822CA43005E8E67 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */; };
 		EF46E1492822DC83005E8E67 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1482822DC83005E8E67 /* Storage.swift */; };
+		EF46E14D2826A11B005E8E67 /* basic.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF46E14A2826A11B005E8E67 /* basic.jpeg */; };
+		EF46E14E2826A11B005E8E67 /* grammar.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF46E14B2826A11B005E8E67 /* grammar.jpeg */; };
+		EF46E14F2826A11B005E8E67 /* practice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF46E14C2826A11B005E8E67 /* practice.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		EF46E1442822BE2E005E8E67 /* BookInfo.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = BookInfo.json; sourceTree = "<group>"; };
 		EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		EF46E1482822DC83005E8E67 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		EF46E14A2826A11B005E8E67 /* basic.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = basic.jpeg; sourceTree = "<group>"; };
+		EF46E14B2826A11B005E8E67 /* grammar.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = grammar.jpeg; sourceTree = "<group>"; };
+		EF46E14C2826A11B005E8E67 /* practice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = practice.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +84,9 @@
 				EF46E1442822BE2E005E8E67 /* BookInfo.json */,
 				EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */,
 				EF46E1482822DC83005E8E67 /* Storage.swift */,
+				EF46E14A2826A11B005E8E67 /* basic.jpeg */,
+				EF46E14B2826A11B005E8E67 /* grammar.jpeg */,
+				EF46E14C2826A11B005E8E67 /* practice.jpeg */,
 			);
 			path = BookManager;
 			sourceTree = "<group>";
@@ -141,8 +150,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF46E1452822BE2E005E8E67 /* BookInfo.json in Resources */,
+				EF46E14F2826A11B005E8E67 /* practice.jpeg in Resources */,
 				EF46E139282026A1005E8E67 /* LaunchScreen.storyboard in Resources */,
 				EF46E136282026A1005E8E67 /* Assets.xcassets in Resources */,
+				EF46E14E2826A11B005E8E67 /* grammar.jpeg in Resources */,
+				EF46E14D2826A11B005E8E67 /* basic.jpeg in Resources */,
 				EF46E134282026A0005E8E67 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
