@@ -74,24 +74,64 @@
 		EF46E12B282026A0005E8E67 /* BookManager */ = {
 			isa = PBXGroup;
 			children = (
+				EF46E1522826BD27005E8E67 /* Model */,
+				EF46E1532826BD30005E8E67 /* View */,
+				EF46E1542826BD3A005E8E67 /* Controller */,
 				EF46E12C282026A0005E8E67 /* AppDelegate.swift */,
 				EF46E12E282026A0005E8E67 /* SceneDelegate.swift */,
-				EF46E130282026A0005E8E67 /* MainViewController.swift */,
-				EF46E132282026A0005E8E67 /* Main.storyboard */,
 				EF46E135282026A1005E8E67 /* Assets.xcassets */,
-				EF46E137282026A1005E8E67 /* LaunchScreen.storyboard */,
 				EF46E13A282026A1005E8E67 /* Info.plist */,
-				EF46E1402822BAD2005E8E67 /* BookMarkTableVC.swift */,
-				EF46E1422822BBC4005E8E67 /* Book.swift */,
-				EF46E1442822BE2E005E8E67 /* BookInfo.json */,
-				EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */,
-				EF46E1482822DC83005E8E67 /* Storage.swift */,
 				EF46E14A2826A11B005E8E67 /* basic.jpeg */,
 				EF46E14B2826A11B005E8E67 /* grammar.jpeg */,
 				EF46E14C2826A11B005E8E67 /* practice.jpeg */,
-				EF46E1502826BAEF005E8E67 /* BookmarkTableViewCell.swift */,
 			);
 			path = BookManager;
+			sourceTree = "<group>";
+		};
+		EF46E1522826BD27005E8E67 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EF46E1422822BBC4005E8E67 /* Book.swift */,
+				EF46E1442822BE2E005E8E67 /* BookInfo.json */,
+				EF46E1482822DC83005E8E67 /* Storage.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		EF46E1532826BD30005E8E67 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF46E1562826BD87005E8E67 /* Storyboard */,
+				EF46E1552826BD51005E8E67 /* Component */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EF46E1542826BD3A005E8E67 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EF46E130282026A0005E8E67 /* MainViewController.swift */,
+				EF46E1402822BAD2005E8E67 /* BookMarkTableVC.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		EF46E1552826BD51005E8E67 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				EF46E1462822CA43005E8E67 /* BookTableViewCell.swift */,
+				EF46E1502826BAEF005E8E67 /* BookmarkTableViewCell.swift */,
+			);
+			name = Component;
+			sourceTree = "<group>";
+		};
+		EF46E1562826BD87005E8E67 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EF46E132282026A0005E8E67 /* Main.storyboard */,
+				EF46E137282026A1005E8E67 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
