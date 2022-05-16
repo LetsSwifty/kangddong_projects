@@ -44,18 +44,30 @@ extension BookMarkTableVC: UITableViewDataSource, UITableViewDelegate {
         cell.thumbnail?.image = UIImage(named: row.thumbnail!)
         cell.title?.text = row.title
         cell.desc?.text = row.description
+        cell.bookMarkButton.isSelected = row.isSelected!
         cell.row = indexPath.row
         
         return cell
     }
 }
 
-// MARK: Cell Delegate
+// MARK: Cell Delegate: ToggleBookMark
 extension BookMarkTableVC: ToggleBookMark {
     func toggle(row: Int?, isOn: Bool) {
         guard let row = row else { return }
         
-        model.list[row].isSelected = isOn
-        bookmarkTable.reloadData()
+        let alert = UIAlertController(title: "", message: "Are you sure you want to delete it?".localized, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok".localized, style: .default) { (_) in
+            
+            self.model.list[row].isSelected = isOn
+            self.bookmarkTable.reloadData()
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel".localized, style: .cancel)
+        
+        alert.addAction(okAction)
+        alert.addAction(cancelAction)
+        self.present(alert, animated: true)
+
     }
 }

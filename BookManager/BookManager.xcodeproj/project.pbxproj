@@ -23,6 +23,8 @@
 		EF46E14F2826A11B005E8E67 /* practice.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = EF46E14C2826A11B005E8E67 /* practice.jpeg */; };
 		EF46E1512826BAEF005E8E67 /* BookmarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1502826BAEF005E8E67 /* BookmarkTableViewCell.swift */; };
 		EF46E1582826D51A005E8E67 /* Protocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF46E1572826D51A005E8E67 /* Protocol.swift */; };
+		EF8C10122832A614007B09C1 /* ExString.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8C10112832A614007B09C1 /* ExString.swift */; };
+		EF8C10142832A864007B09C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EF8C10132832A864007B09C1 /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		EF46E14C2826A11B005E8E67 /* practice.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = practice.jpeg; sourceTree = "<group>"; };
 		EF46E1502826BAEF005E8E67 /* BookmarkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkTableViewCell.swift; sourceTree = "<group>"; };
 		EF46E1572826D51A005E8E67 /* Protocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocol.swift; sourceTree = "<group>"; };
+		EF8C10112832A614007B09C1 /* ExString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExString.swift; sourceTree = "<group>"; };
+		EF8C10132832A864007B09C1 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,17 +80,15 @@
 		EF46E12B282026A0005E8E67 /* BookManager */ = {
 			isa = PBXGroup;
 			children = (
+				EF8C10172832AAD4007B09C1 /* Resource */,
 				EF46E1522826BD27005E8E67 /* Model */,
 				EF46E1532826BD30005E8E67 /* View */,
 				EF46E1542826BD3A005E8E67 /* Controller */,
 				EF46E12C282026A0005E8E67 /* AppDelegate.swift */,
 				EF46E12E282026A0005E8E67 /* SceneDelegate.swift */,
-				EF46E135282026A1005E8E67 /* Assets.xcassets */,
 				EF46E13A282026A1005E8E67 /* Info.plist */,
-				EF46E14A2826A11B005E8E67 /* basic.jpeg */,
-				EF46E14B2826A11B005E8E67 /* grammar.jpeg */,
-				EF46E14C2826A11B005E8E67 /* practice.jpeg */,
-				EF46E1572826D51A005E8E67 /* Protocol.swift */,
+				EF8C10152832AA99007B09C1 /* Extension */,
+				EF8C10162832AABA007B09C1 /* Protocol */,
 			);
 			path = BookManager;
 			sourceTree = "<group>";
@@ -135,6 +137,34 @@
 				EF46E137282026A1005E8E67 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		EF8C10152832AA99007B09C1 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EF8C10112832A614007B09C1 /* ExString.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		EF8C10162832AABA007B09C1 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				EF46E1572826D51A005E8E67 /* Protocol.swift */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+		EF8C10172832AAD4007B09C1 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				EF46E135282026A1005E8E67 /* Assets.xcassets */,
+				EF46E14A2826A11B005E8E67 /* basic.jpeg */,
+				EF46E14B2826A11B005E8E67 /* grammar.jpeg */,
+				EF46E14C2826A11B005E8E67 /* practice.jpeg */,
+				EF8C10132832A864007B09C1 /* Localizable.strings */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -200,6 +230,7 @@
 				EF46E139282026A1005E8E67 /* LaunchScreen.storyboard in Resources */,
 				EF46E136282026A1005E8E67 /* Assets.xcassets in Resources */,
 				EF46E14E2826A11B005E8E67 /* grammar.jpeg in Resources */,
+				EF8C10142832A864007B09C1 /* Localizable.strings in Resources */,
 				EF46E14D2826A11B005E8E67 /* basic.jpeg in Resources */,
 				EF46E134282026A0005E8E67 /* Main.storyboard in Resources */,
 			);
@@ -221,6 +252,7 @@
 				EF46E1472822CA43005E8E67 /* BookTableViewCell.swift in Sources */,
 				EF46E1412822BAD2005E8E67 /* BookMarkTableVC.swift in Sources */,
 				EF46E1512826BAEF005E8E67 /* BookmarkTableViewCell.swift in Sources */,
+				EF8C10122832A614007B09C1 /* ExString.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

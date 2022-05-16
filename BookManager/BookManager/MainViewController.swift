@@ -29,22 +29,6 @@ class MainViewController: UITableViewController {
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
-//    private func loadBookInfo() {
-//        guard
-//            let jsonData = BookManager.shared.load(),
-//            let dictData = try? JSONDecoder().decode(Book.self, from: jsonData)
-//        else { return }
-//
-//        print("결과 \(dictData)")
-//    }
-//
-//    private func updateBookInfo(_ responseData: Book) {
-//        guard let data = responseData else { return }
-//        bookInfoData.totalCount = data.totalCount
-//        bookInfoData.books = data.books
-//    }
-
-    
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,6 +44,7 @@ class MainViewController: UITableViewController {
         cell.thumbnailImageView.image = UIImage(named: row.thumbnail!)
         cell.titleLabel.text = row.title
         cell.descLabel.text = row.description
+        cell.bookMarkButton.isSelected = row.isSelected!
         cell.row = indexPath.row
         
         return cell
@@ -67,12 +52,12 @@ class MainViewController: UITableViewController {
 
 }
 
-// MARK: Cell Delegate
+// MARK: Cell Delegate: ToggleBookMark
 extension MainViewController: ToggleBookMark {
     func toggle(row: Int?, isOn: Bool) {
         guard let row = row else { return }
         
-        model.list[row].isSelected = isOn     
+        model.list[row].isSelected = isOn
         
     }
 }

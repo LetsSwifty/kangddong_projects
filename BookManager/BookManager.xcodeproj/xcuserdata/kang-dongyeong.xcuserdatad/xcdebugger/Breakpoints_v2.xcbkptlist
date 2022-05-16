@@ -23,125 +23,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "B48B6C66-4AF8-4F8A-8A36-FE74D3F0FCFE"
+            uuid = "EA8F2870-11F0-488D-A74E-DE5645E2C4D0"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BookManager/View/BookTableViewCell.swift"
+            filePath = "BookManager/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "setBookMark(_:)"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "toggle(row:isOn:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2ECE37BC-0FA8-4D59-B443-766E6298E278"
+            uuid = "117BAEBA-789E-4DD3-AAC8-7362F39D53AA"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "BookManager/View/BookTableViewCell.swift"
+            filePath = "BookManager/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
-            landmarkName = "BookTableViewCell"
-            landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "2ECE37BC-0FA8-4D59-B443-766E6298E278 - 6bad29be12814502"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookManager.BookTableViewCell.isOn.getter : Swift.Bool"
-                  moduleName = "BookManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kang-dongyeong/Desktop/kangddong_projects/BookManager/BookManager/View/BookTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "84">
-               </Location>
-               <Location
-                  uuid = "2ECE37BC-0FA8-4D59-B443-766E6298E278 - dbeb83125c54aefe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookManager.BookTableViewCell.isOn.setter : Swift.Bool"
-                  moduleName = "BookManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kang-dongyeong/Desktop/kangddong_projects/BookManager/BookManager/View/BookTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "112">
-               </Location>
-               <Location
-                  uuid = "2ECE37BC-0FA8-4D59-B443-766E6298E278 - 6e3534fe32e1ad90"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookManager.BookTableViewCell.isOn.modify : Swift.Bool"
-                  moduleName = "BookManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kang-dongyeong/Desktop/kangddong_projects/BookManager/BookManager/View/BookTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "0"
-                  endingLineNumber = "0"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "2ECE37BC-0FA8-4D59-B443-766E6298E278 - ac4e2cbe39e19cfe"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookManager.BookTableViewCell.isOn.modify : Swift.Bool with unmangled suffix &quot;.resume.0&quot;"
-                  moduleName = "BookManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kang-dongyeong/Desktop/kangddong_projects/BookManager/BookManager/View/BookTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "16">
-               </Location>
-               <Location
-                  uuid = "2ECE37BC-0FA8-4D59-B443-766E6298E278 - 6eaf271e1397bbe5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookManager.BookTableViewCell.init(style: __C.UITableViewCellStyle, reuseIdentifier: Swift.Optional&lt;Swift.String&gt;) -&gt; BookManager.BookTableViewCell"
-                  moduleName = "BookManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kang-dongyeong/Desktop/kangddong_projects/BookManager/BookManager/View/BookTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "348">
-               </Location>
-               <Location
-                  uuid = "2ECE37BC-0FA8-4D59-B443-766E6298E278 - 1856829548ffbd47"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "BookManager.BookTableViewCell.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;BookManager.BookTableViewCell&gt;"
-                  moduleName = "BookManager"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/kang-dongyeong/Desktop/kangddong_projects/BookManager/BookManager/View/BookTableViewCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "332">
-               </Location>
-            </Locations>
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

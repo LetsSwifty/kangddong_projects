@@ -9,5 +9,6 @@ import Foundation
 
 
 protocol ToggleBookMark {
+    //func toggle(row: Int?, isOn: Bool)
     func toggle(row: Int?, isOn: Bool)
 }

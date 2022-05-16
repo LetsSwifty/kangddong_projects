@@ -15,22 +15,13 @@ class BookTableViewCell: UITableViewCell {
     @IBOutlet weak var bookMarkButton: UIButton!
     
     var row: Int?
-    var delegate: ToggleBookMark?
-    var isOn = false
+    var delegate: ToggleBookMark?    
     
     //TODO: 북마크 버튼 눌렀을 때
     @IBAction func setBookMark(_ sender: UIButton) {
+        sender.isSelected.toggle()
         
-        if isOn {
-            bookMarkButton.setImage(UIImage(systemName: "book"), for: .normal)
-            isOn = false
-        } else {
-            bookMarkButton.setImage(UIImage(systemName: "book.fill"), for: .normal)
-            isOn = true
-        }
-        delegate?.toggle(row: row, isOn: isOn) 
-        
-        print("page1 button")
+        delegate?.toggle(row: row, isOn: sender.isSelected)
     }
 
 }

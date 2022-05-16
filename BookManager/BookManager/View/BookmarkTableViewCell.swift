@@ -27,8 +27,7 @@ class BookmarkTableViewCell: UITableViewCell {
             bookMarkButton.setImage(UIImage(named: "book.fill"), for: .normal)
             isOn = true
         }
-        delegate?.toggle(row: row, isOn: isOn)
         
-        print("page2 button")
+        delegate?.toggle(row: row, isOn: isOn)
     }
 }
