@@ -12,7 +12,7 @@ class BookMarkTableVC: UIViewController {
     @IBOutlet weak var bookmarkTable: UITableView!
     
     let model = BookManager.shared
-    
+    var bookMarkList: [BookInfo]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
