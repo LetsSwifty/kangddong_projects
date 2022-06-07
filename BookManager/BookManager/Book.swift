@@ -28,10 +28,6 @@ class BookInfo {
 //}
 //
 class BookManager {
-
-    static let shared = BookManager()
-
-    private init () {}
     
     var dataset = [
         ("grammar.jpeg", "꼼꼼한 재은씨 문법편", "꼼꼼한 재은씨가 꼼꼼하게 문법에 대해서 알려주는 책이다.", false),

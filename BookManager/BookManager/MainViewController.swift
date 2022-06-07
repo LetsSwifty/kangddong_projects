@@ -9,12 +9,14 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    let model = BookManager.shared
+    let model = BookManager()
+    var bookMarkList: [BookInfo] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        bookMarkList = model.list
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -25,19 +27,19 @@ class MainViewController: UITableViewController {
     
     @IBAction func moveBookMark(_ sender: Any) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "BookMarkTableVC") as? BookMarkTableVC else { return }
-        
+        vc.bookMarkList = bookMarkList
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return model.list.count
+        return bookMarkList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let row = model.list[indexPath.row]
+        let row = bookMarkList[indexPath.row]
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "bookListCell") as? BookTableViewCell else { return UITableViewCell() }
         cell.delegate = self
         
@@ -57,7 +59,7 @@ extension MainViewController: ToggleBookMark {
     func toggle(row: Int?, isOn: Bool) {
         guard let row = row else { return }
         
-        model.list[row].isSelected = isOn
+        bookMarkList[row].isSelected = isOn
         
     }
 }
