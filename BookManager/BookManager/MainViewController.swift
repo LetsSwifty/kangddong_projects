@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UITableViewController {
 
-    let model = BookManager()
+    let model = BookManager.shared
     var bookMarkList: [BookInfo] = []
     
     
@@ -27,7 +27,7 @@ class MainViewController: UITableViewController {
     
     @IBAction func moveBookMark(_ sender: Any) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "BookMarkTableVC") as? BookMarkTableVC else { return }
-        vc.bookMarkList = bookMarkList
+        //vc.bookMarkList = bookMarkList
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
