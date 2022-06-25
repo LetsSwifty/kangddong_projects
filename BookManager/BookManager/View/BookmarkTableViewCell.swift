@@ -18,6 +18,16 @@ class BookmarkTableViewCell: UITableViewCell {
     var delegate: ToggleBookMark?
     var isOn = true
     
+    func setData(_ data: BookSimpleInfo) {
+        let imageData = NSData(contentsOf: URL(string: data.image)!)
+        let image = UIImage(data: imageData as! Data)
+        thumbnail.image = image
+        title.text = data.title
+        desc.text = data.description
+        //bookMarkButton.isSelected = data.title
+        
+    }
+    
     @IBAction func setBookMark(_ sender: UIButton) {
         
         if isOn {

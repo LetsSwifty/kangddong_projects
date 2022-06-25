@@ -11,8 +11,8 @@ class BookMarkTableVC: UIViewController {
 
     @IBOutlet weak var bookmarkTable: UITableView!
     
-    let model = BookManager.shared
-    var bookMarkList: [BookInfo] = []
+    var bookMarkList: [BookSimpleInfo] = []
+    var status: [Bool] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,20 +21,17 @@ class BookMarkTableVC: UIViewController {
         bookmarkTable.dataSource = self
         bookmarkTable.reloadData()
     }
+    override func viewWillDisappear(_ animated: Bool) {
+        let pvc = self.presentedViewController as! MainViewController
+        pvc.bookMarkList = bookMarkList
+    }
 }
 
 // MARK: - Table view data source
 extension BookMarkTableVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var count = 0
-        model.list.forEach {
-            if $0.isSelected! {
-                count += 1
-                bookMarkList.append($0)
-            }
-        }
-        return count
+        return bookMarkList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -43,10 +40,8 @@ extension BookMarkTableVC: UITableViewDataSource, UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "bookmarkListCell") as? BookmarkTableViewCell else { return UITableViewCell() }
         
         cell.delegate = self
-        cell.thumbnail?.image = UIImage(named: item.thumbnail!)
-        cell.title?.text = item.title
-        cell.desc?.text = item.description
-        cell.bookMarkButton.isSelected = item.isSelected!
+        cell.setData(item)
+        cell.bookMarkButton.isSelected = status[indexPath.row]
         cell.row = indexPath.row
         
         return cell
@@ -61,7 +56,7 @@ extension BookMarkTableVC: ToggleBookMark {
         let alert = UIAlertController(title: "", message: "Are you sure you want to delete it?".localized, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok".localized, style: .default) { (_) in
             self.bookMarkList.remove(at: row)
-            self.model.list[row].isSelected = isOn
+            //self.model.list[row].isSelected = isOn
             //self.bookMarkList[row].isSelected = isOn
             self.bookmarkTable.reloadData()
         }

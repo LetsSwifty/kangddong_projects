@@ -23,5 +23,15 @@ class BookTableViewCell: UITableViewCell {
         
         delegate?.toggle(row: row, isOn: sender.isSelected)
     }
+    
+    func setData(_ data: BookSimpleInfo) {
+        let imageData = NSData(contentsOf: URL(string: data.image)!)
+        let image = UIImage(data: imageData as! Data)
+        thumbnailImageView.image = image
+        
+        let title = data.title.replacingOccurrences(of: "<b>", with: "").replacingOccurrences(of: "</b>", with: "")
+        titleLabel.text = title
+        descLabel.text = data.description
+    }
 
 }
