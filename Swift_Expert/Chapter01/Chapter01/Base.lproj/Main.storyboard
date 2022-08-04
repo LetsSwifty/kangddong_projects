@@ -64,8 +64,13 @@
                                         <constraint firstItem="y89-bJ-ewt" firstAttribute="top" secondItem="oXj-La-LgN" secondAttribute="bottom" constant="5" id="xaW-4v-ZXb"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="y89-bJ-ewt" id="gib-AO-COr"/>
+                                    <outlet property="regDate" destination="lNh-b3-RwT" id="HkG-YV-wHk"/>
+                                    <outlet property="subject" destination="oXj-La-LgN" id="gem-Qg-Zq6"/>
+                                </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" id="SUR-vJ-H0v">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCellWithImage" id="SUR-vJ-H0v" customClass="MemoCell" customModule="Chapter01" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="124.5" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SUR-vJ-H0v" id="yzk-7F-vQV">
@@ -121,6 +126,12 @@
                                         <constraint firstItem="lUB-Kj-VuQ" firstAttribute="leading" secondItem="XKm-Ba-RLg" secondAttribute="trailingMargin" constant="10" id="woF-n6-kds"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="Hql-UQ-dlA" id="zko-hS-BFI"/>
+                                    <outlet property="imageview" destination="XKm-Ba-RLg" id="JpG-7t-nxu"/>
+                                    <outlet property="regDate" destination="qbX-eZ-wl7" id="VpM-tI-iMG"/>
+                                    <outlet property="subject" destination="lUB-Kj-VuQ" id="QXp-ud-6IK"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -146,7 +157,7 @@
         <!--Title-->
         <scene sceneID="xoB-78-CEc">
             <objects>
-                <viewController id="HmM-Bo-ffR" customClass="MemoReadVC" customModule="Chapter01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoReadVC" id="HmM-Bo-ffR" customClass="MemoReadVC" customModule="Chapter01" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u8A-cc-xwS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -188,6 +199,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="QOc-ac-o5e"/>
+                    <connections>
+                        <outlet property="contents" destination="p14-cN-Os7" id="e9X-o0-5qA"/>
+                        <outlet property="imageView" destination="oHV-DM-YIw" id="uBo-kj-QmB"/>
+                        <outlet property="subject" destination="H2m-Ub-Mh8" id="sIT-A6-TJU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zm9-Q3-nHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,7 +212,7 @@
         <!--메모 작성-->
         <scene sceneID="o9H-t6-wBR">
             <objects>
-                <viewController id="qS1-6t-2Xf" customClass="MemoFormVC" customModule="Chapter01" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoFormVC" id="qS1-6t-2Xf" customClass="MemoFormVC" customModule="Chapter01" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7tc-ZR-SsB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

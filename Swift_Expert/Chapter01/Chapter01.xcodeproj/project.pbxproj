@@ -17,6 +17,7 @@
 		EFC2C46228998AF500435275 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC2C46128998AF500435275 /* MemoReadVC.swift */; };
 		EFC2C467289ACE8B00435275 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC2C466289ACE8B00435275 /* MemoCell.swift */; };
 		EFC2C46A289ACEB100435275 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC2C469289ACEB100435275 /* MemoData.swift */; };
+		EFC2C46D289C234A00435275 /* ExArray.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFC2C46C289C234A00435275 /* ExArray.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EFC2C46128998AF500435275 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		EFC2C466289ACE8B00435275 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		EFC2C469289ACEB100435275 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		EFC2C46C289C234A00435275 /* ExArray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExArray.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 		EF083C9F28982975004D262D /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				EFC2C46B289C233400435275 /* Extension */,
 				EFC2C468289ACEA200435275 /* Model */,
 				EFC2C465289ACE6700435275 /* View */,
 				EF083CA028982997004D262D /* Controller */,
@@ -141,6 +144,14 @@
 				EFC2C469289ACEB100435275 /* MemoData.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EFC2C46B289C233400435275 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EFC2C46C289C234A00435275 /* ExArray.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +229,7 @@
 				EFC2C46228998AF500435275 /* MemoReadVC.swift in Sources */,
 				EF083C8A289824C2004D262D /* AppDelegate.swift in Sources */,
 				EFC2C46A289ACEB100435275 /* MemoData.swift in Sources */,
+				EFC2C46D289C234A00435275 /* ExArray.swift in Sources */,
 				EFC2C46028998AE100435275 /* MemoFormVC.swift in Sources */,
 				EF083C8C289824C2004D262D /* SceneDelegate.swift in Sources */,
 				EFC2C467289ACE8B00435275 /* MemoCell.swift in Sources */,
