@@ -21,7 +21,7 @@ class MemoListVC: UITableViewController {
         self.tableView.reloadData()
     }
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         let count = self.appDelegate.memoList.count
         return count
@@ -35,7 +35,10 @@ class MemoListVC: UITableViewController {
         
         cell.subject.text = row.title
         cell.contents.text = row.contents
-        cell.imageview.image = row.image
+        
+        if let image = row.image {
+            cell.imageview.image = image
+        }
         
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -44,7 +47,6 @@ class MemoListVC: UITableViewController {
             cell.regDate.text = formatter.string(from: registDate)
 
         }
-        
         
         return cell
     }
