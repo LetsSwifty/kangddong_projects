@@ -66,8 +66,8 @@
 		EF083C88289824C1004D262D /* Chapter01 */ = {
 			isa = PBXGroup;
 			children = (
+				EFC2C46F289FFEC500435275 /* Supporting Files */,
 				EF083C9F28982975004D262D /* Sources */,
-				EF083C9E28982951004D262D /* Supporting Files */,
 				EF083C9D289828E6004D262D /* Resources */,
 				EF083C8F289824C2004D262D /* Main.storyboard */,
 				EF083C94289824C2004D262D /* LaunchScreen.storyboard */,
@@ -81,14 +81,6 @@
 				EF083C92289824C2004D262D /* Assets.xcassets */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		EF083C9E28982951004D262D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				EF083C97289824C2004D262D /* Info.plist */,
-			);
-			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		EF083C9F28982975004D262D /* Sources */ = {
@@ -152,6 +144,14 @@
 				EFC2C46C289C234A00435275 /* ExArray.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		EFC2C46F289FFEC500435275 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				EF083C97289824C2004D262D /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -383,7 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5URVMMXQW6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Chapter01/Supporting Files/info.plist";
+				INFOPLIST_FILE = Chapter01/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -411,7 +411,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5URVMMXQW6;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Chapter01/Supporting Files/info.plist";
+				INFOPLIST_FILE = Chapter01/info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
