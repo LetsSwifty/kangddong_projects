@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Chapter03
+
+  Created by 강동영 on 2022/08/17.
+  
+*/
+
+
+// MARK: FirstViewController
+"FirstViewController" = "첫번쨰 탭";
