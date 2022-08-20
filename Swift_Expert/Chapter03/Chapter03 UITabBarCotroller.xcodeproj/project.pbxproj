@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EF95967528AA8F99009ED0E2 /* Chapter03.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chapter03.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF95967528AA8F99009ED0E2 /* Chapter03 UITabBarCotroller.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Chapter03 UITabBarCotroller.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF95967828AA8F99009ED0E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF95967A28AA8F99009ED0E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EF95967C28AA8F99009ED0E2 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 		EF95967628AA8F99009ED0E2 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EF95967528AA8F99009ED0E2 /* Chapter03.app */,
+				EF95967528AA8F99009ED0E2 /* Chapter03 UITabBarCotroller.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,9 +101,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EF95967428AA8F99009ED0E2 /* Chapter03 */ = {
+		EF95967428AA8F99009ED0E2 /* Chapter03 UITabBarCotroller */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EF95968928AA8F9B009ED0E2 /* Build configuration list for PBXNativeTarget "Chapter03" */;
+			buildConfigurationList = EF95968928AA8F9B009ED0E2 /* Build configuration list for PBXNativeTarget "Chapter03 UITabBarCotroller" */;
 			buildPhases = (
 				EF95967128AA8F99009ED0E2 /* Sources */,
 				EF95967228AA8F99009ED0E2 /* Frameworks */,
@@ -113,9 +113,9 @@
 			);
 			dependencies = (
 			);
-			name = Chapter03;
+			name = "Chapter03 UITabBarCotroller";
 			productName = Chapter03;
-			productReference = EF95967528AA8F99009ED0E2 /* Chapter03.app */;
+			productReference = EF95967528AA8F99009ED0E2 /* Chapter03 UITabBarCotroller.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -133,7 +133,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EF95967028AA8F99009ED0E2 /* Build configuration list for PBXProject "Chapter03" */;
+			buildConfigurationList = EF95967028AA8F99009ED0E2 /* Build configuration list for PBXProject "Chapter03 UITabBarCotroller" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -146,7 +146,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EF95967428AA8F99009ED0E2 /* Chapter03 */,
+				EF95967428AA8F99009ED0E2 /* Chapter03 UITabBarCotroller */,
 			);
 		};
 /* End PBXProject section */
@@ -375,7 +375,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EF95967028AA8F99009ED0E2 /* Build configuration list for PBXProject "Chapter03" */ = {
+		EF95967028AA8F99009ED0E2 /* Build configuration list for PBXProject "Chapter03 UITabBarCotroller" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF95968728AA8F9B009ED0E2 /* Debug */,
@@ -384,7 +384,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EF95968928AA8F9B009ED0E2 /* Build configuration list for PBXNativeTarget "Chapter03" */ = {
+		EF95968928AA8F9B009ED0E2 /* Build configuration list for PBXNativeTarget "Chapter03 UITabBarCotroller" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EF95968A28AA8F9B009ED0E2 /* Debug */,
