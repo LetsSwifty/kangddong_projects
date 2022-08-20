@@ -19,11 +19,12 @@ class CustomAlertVC: UIViewController {
     }
     
     func initMapBtn() {
-        let alertBtn = UIButton(type: .system)
-        alertBtn.frame = CGRect(x: 0, y: 100, width: 100, height: 30)
+        //let alertBtn = UIButton(type: .system)
+        let alertBtn = CSButton(frame: CGRect(x: 0, y: 100, width: 100, height: 30))
+        //alertBtn.frame = CGRect(x: 0, y: 100, width: 100, height: 30)
         alertBtn.center.x = self.view.frame.width / 2
         alertBtn.setTitle("기본 알림창", for: .normal)
-        alertBtn.backgroundColor = .red
+        //alertBtn.backgroundColor = .red
         alertBtn.addTarget(self, action: #selector(makeMapAlert), for: .touchUpInside)
         
         self.view.addSubview(alertBtn)
@@ -65,8 +66,8 @@ class CustomAlertVC: UIViewController {
         alert.addAction(cancelAction)
         
         let contentVC = RatingViewController()
-        
-        // key contentViewController 이외에는 exception
+        contentVC.ratingView.delegate = self
+        // key contentViewController 이외에는 exception Private API라서 !
         alert.setValue(contentVC, forKey: "contentViewController")
         
         
@@ -103,5 +104,19 @@ class CustomAlertVC: UIViewController {
         alert.setValue(v, forKey: "contentViewController")
         
         self.present(alert, animated: true, completion: nil)
+    }
+}
+
+extension CustomAlertVC: FloatRatingViewDelegate {
+    
+    @objc func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating: Double) {
+        
+        print(">>>>>>>didUpdate \(rating)")
+        
+    }
+
+    /// Returns the rating value as the user pans
+    @objc  func floatRatingView(_ ratingView: FloatRatingView, isUpdating rating: Double) {
+        
     }
 }

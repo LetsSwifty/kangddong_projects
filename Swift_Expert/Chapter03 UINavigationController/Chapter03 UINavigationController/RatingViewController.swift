@@ -9,11 +9,13 @@ import UIKit
 import FloatRatingView
 
 class RatingViewController: UIViewController {
-
+    
+    let ratingView = FloatRatingView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let ratingView = FloatRatingView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        //let ratingView = FloatRatingView(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         self.view = ratingView
         self.preferredContentSize.width = 200
         self.preferredContentSize.height = 30
@@ -23,18 +25,5 @@ class RatingViewController: UIViewController {
         ratingView.rating = 3.5
         ratingView.emptyImage = UIImage(named: "StarEmpty")
         ratingView.fullImage = UIImage(named: "StarFull")
-        //ratingView.delegate = self
-    }
-}
-
-extension RatingViewController: FloatRatingViewDelegate {
-    
-    @objc func floatRatingView(_ ratingView: FloatRatingView, didUpdate rating: Double) {
-        
-    }
-
-    /// Returns the rating value as the user pans
-    @objc  func floatRatingView(_ ratingView: FloatRatingView, isUpdating rating: Double) {
-        
     }
 }

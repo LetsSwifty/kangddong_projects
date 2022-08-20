@@ -19,6 +19,7 @@
 		EF9596E728B15D51009ED0E2 /* CustomAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9596E628B15D51009ED0E2 /* CustomAlertVC.swift */; };
 		EF9596E928B16F36009ED0E2 /* MapKitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9596E828B16F36009ED0E2 /* MapKitViewController.swift */; };
 		EF9596EB28B16FAF009ED0E2 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9596EA28B16FAF009ED0E2 /* RatingViewController.swift */; };
+		EF9596ED28B17D91009ED0E2 /* CSButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9596EC28B17D91009ED0E2 /* CSButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		EF9596E628B15D51009ED0E2 /* CustomAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertVC.swift; sourceTree = "<group>"; };
 		EF9596E828B16F36009ED0E2 /* MapKitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapKitViewController.swift; sourceTree = "<group>"; };
 		EF9596EA28B16FAF009ED0E2 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
+		EF9596EC28B17D91009ED0E2 /* CSButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +112,7 @@
 				EF9596E628B15D51009ED0E2 /* CustomAlertVC.swift */,
 				EF9596E828B16F36009ED0E2 /* MapKitViewController.swift */,
 				EF9596EA28B16FAF009ED0E2 /* RatingViewController.swift */,
+				EF9596EC28B17D91009ED0E2 /* CSButton.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -241,6 +244,7 @@
 				EF9596E928B16F36009ED0E2 /* MapKitViewController.swift in Sources */,
 				EF9596D128B10312009ED0E2 /* ViewController.swift in Sources */,
 				EF9596CD28B10312009ED0E2 /* AppDelegate.swift in Sources */,
+				EF9596ED28B17D91009ED0E2 /* CSButton.swift in Sources */,
 				EF9596E328B10345009ED0E2 /* String.swift in Sources */,
 				EF9596E728B15D51009ED0E2 /* CustomAlertVC.swift in Sources */,
 				EF9596CF28B10312009ED0E2 /* SceneDelegate.swift in Sources */,
