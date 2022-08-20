@@ -1,0 +1,12 @@
+
+/* Class = "UILabel"; text = "텍스트 뭐라뭐라써있음"; ObjectID = "E05-wd-7Dq"; */
+"E05-wd-7Dq.text" = "텍스트 뭐라뭐라써있음";
+
+/* Class = "UILabel"; text = "Gesture Test"; ObjectID = "FPh-kC-gIg"; */
+"FPh-kC-gIg.text" = "Gesture Test";
+
+/* Class = "UIButton"; configuration.title = "Button"; ObjectID = "VqY-TO-E2V"; */
+"VqY-TO-E2V.configuration.title" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "VqY-TO-E2V"; */
+"VqY-TO-E2V.normalTitle" = "Button";
