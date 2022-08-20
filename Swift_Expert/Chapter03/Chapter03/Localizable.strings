@@ -8,4 +8,6 @@
 
 
 // MARK: FirstViewController
-"FirstViewController" = "첫번쨰 탭";
+"FirstViewController" = "첫번째 탭";
+"SecondViewController" = "두번째 탭";
+"ThirdViewController" = "세번째 탭";
