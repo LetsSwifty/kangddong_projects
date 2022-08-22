@@ -5,6 +5,16 @@
 //  Created by dongyeongkang on 2022/07/27.
 //
 
+/*
+    Flow
+    'UserInterAction Flow'를 검색하세요
+    viewDidLoad - Model Count 0 emptyAddView 표출
+    ** CRUD 시에 reloadData()
+    emptyAddView tap 시에 showMenu(pickerCotroller) 호출
+    사진 추가 시에 Reload
+    사진 삭제 시에 Reload
+ */
+
 import UIKit
 import AVFoundation
 import RxSwift
@@ -16,8 +26,8 @@ class ViewController: UIViewController {
     
     private let picker = UIImagePickerController()
     
-    var viewModel: ViewModelAvailable? = ViewModel()
-    var bag = DisposeBag()
+    var viewModel: ViewModelAvailable? = ViewModel() // 보통 이전 VC에서 ViewModel을 init 해주는데 초기화면이라 바로 init 해줬습니다.
+    var bag = DisposeBag() // Dispose 제거하다; 간단하게 deinit, 초기화정도로 봐주시면 좋을거 같습니다
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,12 +55,18 @@ class ViewController: UIViewController {
         emptyAddView.addGestureRecognizer(tap)
     }
     
+    /*
+     RxSwift에서 구독 방출 두 가지 기억하시면됩니다.
+     
+     */
+    
+    /// Viewmodel과 데이터 바인딩
     private func bindViewModel() {
-        //구독
+        
         viewModel?
             .reloadSubject
             .subscribe(onNext: { _ in
-
+                // UserInterAction Flow 3 subject를 구독하였고 방출하자 구독된 곳에서 반응
                 DispatchQueue.main.async {
                     self.dismiss(animated: true, completion: nil)
                     self.imageCollectionView.reloadData()
@@ -102,7 +118,6 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
             imageCollectionView.isHidden = hidden
         }
         
-        //imageCollectionView.isHidden = true
         return viewModel?.imageList.count ?? 0
     }
     
@@ -195,9 +210,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             
         case .camera:
             
-            let imgName = UUID().uuidString+".jpeg"
-            let documentDirectory = NSTemporaryDirectory()
-            let localPath = documentDirectory.appending(imgName)
             if let imgData = uploadImage?.jpegData(compressionQuality: 0.3) {
                 
                 /*
@@ -212,7 +224,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
             } else {
                 self.dismiss(animated: true, completion: nil)
             }
-            
+            // UserInterAction Flow 1 사진 추가
             viewModel?.converImageToData(image: uploadImage, type: type)
             
         case .savedPhotosAlbum:

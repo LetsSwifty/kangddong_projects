@@ -32,6 +32,7 @@ class ViewModel: ViewModelAvailable {
     
     var imageList: [(image: UIImage, type: String)] = [(image: UIImage(systemName: "plus")!, type: "ADD")]
     
+    // UserInterAction Flow 1 사진 추가
     func converImageToData(image: UIImage?, type: String) {
         guard let image = image else { return }
         
@@ -70,9 +71,6 @@ class ViewModel: ViewModelAvailable {
         NSLog("convertImage count = \(string)", "%@")
         
         insertImageList(image: image)
-        
-        //reloadCollectionViewPublish.onNext(())
-        
     }
     
 
@@ -83,8 +81,10 @@ class ViewModel: ViewModelAvailable {
         if imageList.count == 4 {
             self.imageList.removeLast()
         }
+        // UserInterAction Flow 2 사진 추가 후에 onNext를 통해 방출
+        // 구독-방출이기에 VM에서 방출시에 VC에서는 구독한 친구를 찾으면 됩니다.
+        // VC에서 reloadSubject를 찾아주세요
         reloadSubject.onNext(())
-        //imageCollectionView.reloadData()
     }
     
     func deleteImageList(index: Int) {
