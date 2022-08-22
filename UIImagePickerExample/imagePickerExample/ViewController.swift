@@ -7,26 +7,29 @@
 
 import UIKit
 import AVFoundation
+import RxSwift
 
 class ViewController: UIViewController {
 
     @IBOutlet weak var imageCollectionView: UICollectionView!
     @IBOutlet weak var emptyAddView: UIView!
     
-//    private var imageList: [UIImage] = [UIImage(systemName: "cloud")!,UIImage(systemName: "pencil")!, UIImage(systemName: "trash")!, UIImage(systemName: "folder")!]
-    
     private let picker = UIImagePickerController()
     
-    private var imageList: [(image: UIImage, type: String)] = [(image: UIImage(systemName: "plus")!, type: "ADD")]
+    var viewModel: ViewModelAvailable? = ViewModel()
+    var bag = DisposeBag()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
         initUI()
+        bindViewModel()
         configCollectionView()
         imageCollectionView.reloadData()
     }
 
     private func initUI() {
+        
         let flowLayout: UICollectionViewFlowLayout
         flowLayout = UICollectionViewFlowLayout()
         self.imageCollectionView.collectionViewLayout = flowLayout
@@ -40,6 +43,19 @@ class ViewController: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(showMenu))
         emptyAddView.addGestureRecognizer(tap)
+    }
+    
+    private func bindViewModel() {
+        //구독
+        viewModel?
+            .reloadSubject
+            .subscribe(onNext: { _ in
+
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                    self.imageCollectionView.reloadData()
+                }
+            }).disposed(by: bag)
     }
     
     @objc func showMenu() {
@@ -66,96 +82,19 @@ class ViewController: UIViewController {
 
     
     private func configCollectionView() {
+        
         imageCollectionView.dataSource = self
         imageCollectionView.delegate = self
         imageCollectionView.clipsToBounds = false
         imageCollectionView.contentInset = UIEdgeInsets(top: 12, left: 16, bottom: 0, right: 16)
     }
-    
-    private func converImageToData(image: UIImage?, type: String) {
-        guard let image = image else { return }
-        
-        var convertImage: Data? = nil
-        
-        switch type {
-        case "png":
-            convertImage = image.pngData()
-        case "jpeg":
-            convertImage = image.jpegData(compressionQuality: 1)
-        default:
-            NSLog("Unknown img Type", "%@")
-            return
-        }
-    
-        if let imageData = convertImage {
-            if imageData.count > 10485760 {
-                let resizeImage = resizeImage(image: image, newWidth: 300)
-                
-                switch type {
-                case "png":
-                    convertImage = resizeImage.pngData()
-                case "jpeg":
-                    convertImage = resizeImage.jpegData(compressionQuality: 1)
-                default:
-                    NSLog("Unknown img Type", "%@")
-                    return
-                }
-            }
-        }
-        
-        let bcf = ByteCountFormatter()
-        bcf.allowedUnits = [.useMB]
-        bcf.countStyle = .file
-        let string = bcf.string(fromByteCount: Int64(convertImage!.count))
-        NSLog("convertImage count = \(string)", "%@")
-        
-        insertImageList(image: image)
-        
-        //reloadCollectionViewPublish.onNext(())
-        
-    }
-    
-    private func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
-        
-        let scale = newWidth / image.size.width // 새 이미지 확대/축소 비율
-        let newHeight = image.size.height * scale
-        
-        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
-        image.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        
-        return newImage!
-    }
-    
-    private func insertImageList(image: UIImage) {
-        self.imageList.insert((image: image, type: "IMG"), at: imageList.count - 1)
-        
-        if imageList.count == 4 {
-            self.imageList.removeLast()
-        }
-        self.dismiss(animated: true, completion: nil)
-        imageCollectionView.reloadData()
-    }
-    
-    private func deleteImageList(index: Int) {
-        
-        self.imageList.remove(at: index)
-        
-        imageCollectionView.reloadData()
-        
-        if imageList.count == 0 {
-            self.imageList.append((image: UIImage(systemName: "plus")!, type: "ADD"))
-        }
-    }
-    
 }
 
 extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         var count = 0
-        imageList.forEach { (image, type) in
+        viewModel?.imageList.forEach { (image, type) in
             if type == "IMG" {
                 count += 1
             }
@@ -164,13 +103,13 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
         //imageCollectionView.isHidden = true
-        return imageList.count
+        return viewModel?.imageList.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ImageCell", for: indexPath) as! ImageCell
-        let tupleItem = imageList[indexPath.row]
+        guard let tupleItem = viewModel?.imageList[indexPath.row] else { return ImageCell() }
         
         if tupleItem.type == "ADD" {
             cell.configAddView(image: tupleItem.image, hidden: true)
@@ -179,7 +118,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
         }
         
         cell.deleteAction = { [weak self] index in
-            self?.deleteImageList(index: index)
+            self?.viewModel?.deleteImageList(index: index)
         }
         
         return cell
@@ -207,7 +146,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let tupleItem = imageList[indexPath.row]
+        guard let tupleItem = viewModel?.imageList[indexPath.row] else { return}
         
         if tupleItem.type == "ADD" {
             showMenu()
@@ -218,6 +157,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
 
 
 // MARK: UIImagePickerControllerDelegate, UINavigationControllerDelegate
+
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -250,8 +190,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                     self.dismiss(animated: true, completion: nil)
                     return
                 }
-                //viewModel?.converImageToData(image: uploadImage, type: type)
-                self.converImageToData(image: uploadImage, type: type)
+                viewModel?.converImageToData(image: uploadImage, type: type)
             }
             
         case .camera:
@@ -274,8 +213,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
                 self.dismiss(animated: true, completion: nil)
             }
             
-            //viewModel?.converImageToData(image: uploadImage, type: type)
-            self.converImageToData(image: uploadImage, type: type)
+            viewModel?.converImageToData(image: uploadImage, type: type)
             
         case .savedPhotosAlbum:
             return
@@ -338,6 +276,19 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
 }
 
 extension UIImage {
+    
+    func resizeImage(newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / self.size.width // 새 이미지 확대/축소 비율
+        let newHeight = self.size.height * scale
+        
+        UIGraphicsBeginImageContext(CGSize(width: newWidth, height: newHeight))
+        self.draw(in: CGRect(x: 0, y: 0, width: newWidth, height: newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
     
     func rotate(degrees: CGFloat) -> UIImage {
         
