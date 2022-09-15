@@ -1,0 +1,13 @@
+{
+    "aps" : {
+        "alert" : {
+            "title" : "Dynamic Island Test",
+            "body" : "In app Noti"
+            
+        },
+        "badge" : 0
+        
+    },
+    "Simulator Target Bundle":
+        "com.letswifty.Chapter04"
+}
