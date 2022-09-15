@@ -1,0 +1,16 @@
+PODS:
+  - FloatRatingView (4.0)
+
+DEPENDENCIES:
+  - FloatRatingView (~> 4)
+
+SPEC REPOS:
+  trunk:
+    - FloatRatingView
+
+SPEC CHECKSUMS:
+  FloatRatingView: bb6bdddfbeec51b1d387b4bd50abc27b4dfccd48
+
+PODFILE CHECKSUM: d394e69d7f5783707cad2c67c595df5b1261366e
+
+COCOAPODS: 1.11.3
