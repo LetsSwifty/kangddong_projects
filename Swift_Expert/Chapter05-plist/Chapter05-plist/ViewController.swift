@@ -30,6 +30,29 @@ class ViewController: UITableViewController {
         self.name.sizeToFit()
         self.gender.selectedSegmentIndex = plist.integer(forKey: GENDER)
         self.married.isOn = plist.bool(forKey: MARRIED)
+        
+        let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
+        let path = paths[0] as NSString
+        let userPlist = path.strings(byAppendingPaths: ["User.plist"])[0]
+        let data = NSMutableDictionary(contentsOfFile: userPlist)
+        
+        var name = data?.value(forKey: "이름") as? String
+        var age = data?.value(forKey: "나이") as? Int
+        var gender = data?.value(forKey: "성별") as? String
+        print("name, age gender")
+        print(name, age, gender)
+        
+        data?.setValue("Rx", forKey: "이름")
+        data?.setValue(27, forKey: "나이")
+        data?.setValue("남", forKey: "성별")
+        data?.write(toFile: userPlist, atomically: true)
+        
+        name = data?.value(forKey: "이름") as? String
+        age = data?.value(forKey: "나이") as? Int
+        gender = data?.value(forKey: "성별") as? String
+        
+        print("name, age gender")
+        print(name, age, gender)
     }
     
     @IBAction func changeGender(_ sender: UISegmentedControl) {
