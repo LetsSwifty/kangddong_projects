@@ -9,23 +9,25 @@
 /* Begin PBXBuildFile section */
 		EF667D7228EF1904003C86B3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF667D7128EF1904003C86B3 /* AppDelegate.swift */; };
 		EF667D7428EF1904003C86B3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF667D7328EF1904003C86B3 /* SceneDelegate.swift */; };
-		EF667D7628EF1904003C86B3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF667D7528EF1904003C86B3 /* ViewController.swift */; };
+		EF667D7628EF1904003C86B3 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF667D7528EF1904003C86B3 /* ListVC.swift */; };
 		EF667D7928EF1904003C86B3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF667D7728EF1904003C86B3 /* Main.storyboard */; };
 		EF667D7C28EF1904003C86B3 /* Chapter07.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF667D7A28EF1904003C86B3 /* Chapter07.xcdatamodeld */; };
 		EF667D7E28EF1906003C86B3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF667D7D28EF1906003C86B3 /* Assets.xcassets */; };
 		EF667D8128EF1906003C86B3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF667D7F28EF1906003C86B3 /* LaunchScreen.storyboard */; };
+		EFE80AB928F14F35008EB4CF /* LogVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFE80AB828F14F35008EB4CF /* LogVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		EF667D6E28EF1904003C86B3 /* Chapter07.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chapter07.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF667D7128EF1904003C86B3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF667D7328EF1904003C86B3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EF667D7528EF1904003C86B3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EF667D7528EF1904003C86B3 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		EF667D7828EF1904003C86B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EF667D7B28EF1904003C86B3 /* Chapter07.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Chapter07.xcdatamodel; sourceTree = "<group>"; };
 		EF667D7D28EF1906003C86B3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF667D8028EF1906003C86B3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EF667D8228EF1906003C86B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EFE80AB828F14F35008EB4CF /* LogVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +62,13 @@
 			children = (
 				EF667D7128EF1904003C86B3 /* AppDelegate.swift */,
 				EF667D7328EF1904003C86B3 /* SceneDelegate.swift */,
-				EF667D7528EF1904003C86B3 /* ViewController.swift */,
+				EF667D7528EF1904003C86B3 /* ListVC.swift */,
 				EF667D7728EF1904003C86B3 /* Main.storyboard */,
 				EF667D7D28EF1906003C86B3 /* Assets.xcassets */,
 				EF667D7F28EF1906003C86B3 /* LaunchScreen.storyboard */,
 				EF667D8228EF1906003C86B3 /* Info.plist */,
 				EF667D7A28EF1904003C86B3 /* Chapter07.xcdatamodeld */,
+				EFE80AB828F14F35008EB4CF /* LogVC.swift */,
 			);
 			path = Chapter07;
 			sourceTree = "<group>";
@@ -142,7 +145,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF667D7C28EF1904003C86B3 /* Chapter07.xcdatamodeld in Sources */,
-				EF667D7628EF1904003C86B3 /* ViewController.swift in Sources */,
+				EF667D7628EF1904003C86B3 /* ListVC.swift in Sources */,
+				EFE80AB928F14F35008EB4CF /* LogVC.swift in Sources */,
 				EF667D7228EF1904003C86B3 /* AppDelegate.swift in Sources */,
 				EF667D7428EF1904003C86B3 /* SceneDelegate.swift in Sources */,
 			);

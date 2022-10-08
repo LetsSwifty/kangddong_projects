@@ -40,7 +40,11 @@ class ListVC: UITableViewController {
         })
         self.present(alert, animated: false)
     }
+}
 
+// MARK:  UITableViewDataSource, UITableViewDelegate
+extension ListVC {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return self.list.count
@@ -75,6 +79,15 @@ class ListVC: UITableViewController {
         }
     }
     
+    override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+        
+        let object = self.list[indexPath.row]
+        let uvc = self.storyboard?.instantiateViewController(withIdentifier: "LogVC") as! LogVC
+        uvc.board = (object as! BoardMO)
+        
+        self.show(uvc, sender: self)
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let object = self.list[indexPath.row]
@@ -93,12 +106,21 @@ class ListVC: UITableViewController {
             
             if self.edit(object: object, title: title, contents: contents) == true {
                 self.tableView.reloadData()
+                
+                let cell = self.tableView.cellForRow(at: indexPath)
+                cell?.textLabel?.text = title
+                cell?.detailTextLabel?.text = contents
+                
+                let firstIndexPath = IndexPath(item: 0, section: 0)
+                self.tableView.moveRow(at: indexPath, to: firstIndexPath )
+                
             }
         })
         self.present(alert, animated: false)
     }
 }
 
+// MARK: Core Date Method
 extension ListVC {
     
     func fetch() -> [NSManagedObject] {
@@ -106,6 +128,9 @@ extension ListVC {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Board")
+        
+        let sort = NSSortDescriptor(key: "regdate", ascending: false)
+        fetchRequest.sortDescriptors = [sort]
         let result = try! context.fetch(fetchRequest)
         return result
     }
@@ -121,9 +146,16 @@ extension ListVC {
         object.setValue(contents, forKey: "contents")
         object.setValue(Date(), forKey: "regdate")
         
+        let logObject = NSEntityDescription.insertNewObject(forEntityName: "Log", into: context) as! LogMO
+        
+        logObject.regdate = Date()
+        logObject.type = LogType.create.rawValue
+        (object as! BoardMO).addToLogs(logObject)
+        
         do {
             try context.save()
-            self.list.append(object)
+            //self.list.append(object)
+            self.list.insert(object, at: 0)
             return true
         } catch {
             context.rollback()
@@ -142,8 +174,15 @@ extension ListVC {
         object.setValue(contents, forKey: "contents")
         object.setValue(Date(), forKey: "regdate")
         
+        let logObject = NSEntityDescription.insertNewObject(forEntityName: "Log", into: context) as! LogMO
+        
+        logObject.regdate = Date()
+        logObject.type = LogType.create.rawValue
+        (object as! BoardMO).addToLogs(logObject)
+        
         do {
             try context.save()
+            self.list = self.fetch()
             return true
         } catch {
             context.rollback()
